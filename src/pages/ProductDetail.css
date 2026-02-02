@@ -1,0 +1,310 @@
+.pdp {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 72px;
+}
+
+.pdp-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 48px 120px;
+}
+
+.pdp-not-found {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: #0a0a0a;
+  color: #fff;
+  font-family: 'EB Garamond', Georgia, serif;
+}
+
+.pdp-not-found a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 2px;
+}
+
+/* Breadcrumb */
+.pdp-breadcrumb {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 40px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.pdp-breadcrumb a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.pdp-breadcrumb a:hover {
+  color: #fff;
+}
+
+/* Layout */
+.pdp-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+/* Images */
+.pdp-main-img {
+  aspect-ratio: 1 / 1.15;
+  overflow: hidden;
+  background: #111;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pdp-main-img--light {
+  background: #f0f0f0;
+}
+
+.pdp-main-img img {
+  width: 88%;
+  height: 88%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.pdp-thumbs {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pdp-thumb {
+  flex: 1;
+  background: #111;
+  border: 2px solid transparent;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.pdp-thumb--light {
+  background: #f0f0f0;
+}
+
+.pdp-thumb.active {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.pdp-thumb--light.active {
+  border-color: rgba(0, 0, 0, 0.4);
+}
+
+.pdp-thumb img {
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+}
+
+.pdp-thumb span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.pdp-thumb--light span {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Info */
+.pdp-info {
+  padding-top: 8px;
+}
+
+.pdp-color-tag {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.pdp-name {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 8px 0 0;
+  letter-spacing: 0.01em;
+}
+
+.pdp-price {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 8px 0 0;
+  letter-spacing: 0.03em;
+}
+
+.pdp-description {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 32px 0 0;
+  letter-spacing: 0.02em;
+}
+
+/* Sizes */
+.pdp-sizes {
+  margin-top: 36px;
+}
+
+.pdp-sizes-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.pdp-sizes-label span:first-child {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.pdp-size-error {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  color: #e74c3c;
+  letter-spacing: 0.05em;
+}
+
+.pdp-size-options {
+  display: flex;
+  gap: 10px;
+}
+
+.pdp-size-btn {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.6);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pdp-size-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.pdp-size-btn.active {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+/* Buy Button */
+.pdp-buy {
+  width: 100%;
+  margin-top: 32px;
+  padding: 18px 0;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #000;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.pdp-buy:hover {
+  background: rgba(255, 255, 255, 0.88);
+  transform: translateY(-1px);
+}
+
+.pdp-buy:active {
+  transform: translateY(0);
+}
+
+/* Details */
+.pdp-details {
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pdp-detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pdp-detail-row span:first-child {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.pdp-detail-row span:last-child {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.02em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pdp-inner {
+    padding: 24px 24px 80px;
+  }
+
+  .pdp-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .pdp-size-btn {
+    flex: 1;
+  }
+}

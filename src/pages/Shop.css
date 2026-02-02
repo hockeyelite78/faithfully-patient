@@ -1,0 +1,68 @@
+.shop {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding-top: 72px;
+}
+
+.shop-header {
+  padding: 80px 48px 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shop-header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.shop-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.shop-title {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 400;
+  color: #fff;
+  margin: 0;
+}
+
+.shop-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.35);
+  margin: 8px 0 0;
+  letter-spacing: 0.05em;
+}
+
+.shop-grid-section {
+  padding: 56px 48px 120px;
+}
+
+.shop-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .shop-header {
+    padding: 60px 24px 32px;
+  }
+
+  .shop-grid-section {
+    padding: 40px 24px 80px;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
