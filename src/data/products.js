@@ -17,7 +17,7 @@ const products = [
       front: blackFront,
       back: blackBack,
     },
-    stripePriceId: 'price_1SwcWVLGZvLg65GGwSNQZxMQ',
+    paymentLink: 'https://buy.stripe.com/9B67sM72wcd88G9d5ZafS01',
   },
   {
     id: 'fp-tee-white',
@@ -32,7 +32,7 @@ const products = [
       front: whiteFront,
       back: whiteBack,
     },
-    stripePriceId: 'price_1SwcXVLGZvLg65GGBuyslhyN',
+    paymentLink: 'https://buy.stripe.com/eVq5kE72welg8G9c1VafS00',
   },
 ];
 

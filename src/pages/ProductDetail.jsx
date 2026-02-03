@@ -20,34 +20,15 @@ export default function ProductDetail() {
     );
   }
 
-  const handleBuy = async () => {
+  const handleBuy = () => {
     if (!selectedSize) {
       setSizeError(true);
       return;
     }
     setSizeError(false);
-
-    const { loadStripe } = await import('@stripe/stripe-js');
-    const { STRIPE_PUBLISHABLE_KEY, SHIPPING_RATE_ID } = await import('../data/stripe');
-    const stripe = await loadStripe(STRIPE_PUBLISHABLE_KEY);
     
-    const { error } = await stripe.redirectToCheckout({
-      lineItems: [{ price: product.stripePriceId, quantity: 1 }],
-      mode: 'payment',
-      shippingAddressCollection: {
-        allowedCountries: ['US'],
-      },
-      shippingOptions: [
-        { shippingRate: SHIPPING_RATE_ID },
-      ],
-      successUrl: window.location.origin + '/shop?success=true',
-      cancelUrl: window.location.href,
-    });
-
-    if (error) {
-      console.error('Stripe checkout error:', error);
-      alert('Something went wrong. Please try again.');
-    }
+    // Redirect to Stripe Payment Link
+    window.location.href = product.paymentLink;
   };
 
   return (
