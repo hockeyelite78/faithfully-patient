@@ -138,7 +138,7 @@ export default function ProductDetail() {
               </div>
               <div className="pdp-detail-row">
                 <span>Shipping</span>
-                <span>Ships within 3–9 business days</span>
+                <span>Ships within 3–5 business days</span>
               </div>
             </div>
           </div>
