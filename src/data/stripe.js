@@ -1,11 +1,6 @@
 // ===========================================
 // STRIPE CONFIGURATION
 // ===========================================
-// Replace the key below with your real Stripe
-// publishable key when you're ready to go live.
-//
-// Test key starts with: pk_test_
-// Live key starts with:  pk_live_
-// ===========================================
 
-export const STRIPE_PUBLISHABLE_KEY = 'pk_test_PLACEHOLDER';
+export const STRIPE_PUBLISHABLE_KEY = 'pk_live_51SwRtpLGZvLg65GGVfngT7arUXImtSEGEoFIl77gI084GTEMWxrhSm0mITExZa0hRwwCtBrcSOi7KE1boUbRpsG600OrvXZtgM';
+export const SHIPPING_RATE_ID = 'shr_1SwcbBLGZvLg65GGdlLVdVN1';

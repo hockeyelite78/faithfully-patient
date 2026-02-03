@@ -27,34 +27,27 @@ export default function ProductDetail() {
     }
     setSizeError(false);
 
-    // -------------------------------------------------
-    // STRIPE CHECKOUT INTEGRATION
-    // -------------------------------------------------
-    // When you have your Stripe account set up:
-    //
-    // 1. Create Products & Prices in your Stripe Dashboard
-    //    (one price per size if needed, or one price per shirt)
-    //
-    // 2. Replace the stripePriceId values in src/data/products.js
-    //
-    // 3. Replace the key in src/data/stripe.js
-    //
-    // 4. Uncomment the code below:
-    //
-    // const { loadStripe } = await import('@stripe/stripe-js');
-    // const { STRIPE_PUBLISHABLE_KEY } = await import('../data/stripe');
-    // const stripe = await loadStripe(STRIPE_PUBLISHABLE_KEY);
-    // await stripe.redirectToCheckout({
-    //   lineItems: [{ price: product.stripePriceId, quantity: 1 }],
-    //   mode: 'payment',
-    //   successUrl: window.location.origin + '/shop?success=true',
-    //   cancelUrl: window.location.href,
-    // });
-    // -------------------------------------------------
+    const { loadStripe } = await import('@stripe/stripe-js');
+    const { STRIPE_PUBLISHABLE_KEY, SHIPPING_RATE_ID } = await import('../data/stripe');
+    const stripe = await loadStripe(STRIPE_PUBLISHABLE_KEY);
+    
+    const { error } = await stripe.redirectToCheckout({
+      lineItems: [{ price: product.stripePriceId, quantity: 1 }],
+      mode: 'payment',
+      shippingAddressCollection: {
+        allowedCountries: ['US'],
+      },
+      shippingOptions: [
+        { shippingRate: SHIPPING_RATE_ID },
+      ],
+      successUrl: window.location.origin + '/shop?success=true',
+      cancelUrl: window.location.href,
+    });
 
-    alert(
-      `Checkout placeholder\n\nItem: ${product.name}\nSize: ${selectedSize}\nPrice: $${product.price}\n\nStripe integration will go live once you add your API keys!`
-    );
+    if (error) {
+      console.error('Stripe checkout error:', error);
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (
@@ -145,7 +138,7 @@ export default function ProductDetail() {
               </div>
               <div className="pdp-detail-row">
                 <span>Shipping</span>
-                <span>Ships within 3–5 business days</span>
+                <span>Ships within 3–9 business days</span>
               </div>
             </div>
           </div>

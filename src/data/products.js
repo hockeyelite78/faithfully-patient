@@ -17,7 +17,7 @@ const products = [
       front: blackFront,
       back: blackBack,
     },
-    stripePriceId: 'price_PLACEHOLDER_BLACK',
+    stripePriceId: 'price_1SwcWVLGZvLg65GGwSNQZxMQ',
   },
   {
     id: 'fp-tee-white',
@@ -32,7 +32,7 @@ const products = [
       front: whiteFront,
       back: whiteBack,
     },
-    stripePriceId: 'price_PLACEHOLDER_WHITE',
+    stripePriceId: 'price_1SwcXVLGZvLg65GGBuyslhyN',
   },
 ];
 
