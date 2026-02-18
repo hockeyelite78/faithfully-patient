@@ -18,11 +18,8 @@ export default function Footer() {
           </div>
           <div className="footer-col">
             <h4>Connect</h4>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://instagram.com/faithfully.patient" target="_blank" rel="noopener noreferrer">
               Instagram
-            </a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-              TikTok
             </a>
           </div>
           <div className="footer-col">
