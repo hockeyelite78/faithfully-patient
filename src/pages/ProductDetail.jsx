@@ -7,9 +7,7 @@ export default function ProductDetail() {
   const { id } = useParams();
   const product = products.find((p) => p.id === id);
 
-  const [selectedSize, setSelectedSize] = useState(null);
   const [showBack, setShowBack] = useState(false);
-  const [sizeError, setSizeError] = useState(false);
 
   if (!product) {
     return (
@@ -21,13 +19,6 @@ export default function ProductDetail() {
   }
 
   const handleBuy = () => {
-    if (!selectedSize) {
-      setSizeError(true);
-      return;
-    }
-    setSizeError(false);
-    
-    // Redirect to Stripe Payment Link
     window.location.href = product.paymentLink;
   };
 
@@ -79,28 +70,6 @@ export default function ProductDetail() {
             </div>
 
             <p className="pdp-description">{product.description}</p>
-
-            {/* Size Selector */}
-            <div className="pdp-sizes">
-              <div className="pdp-sizes-label">
-                <span>Size</span>
-                {sizeError && <span className="pdp-size-error">Please select a size</span>}
-              </div>
-              <div className="pdp-size-options">
-                {product.sizes.map((size) => (
-                  <button
-                    key={size}
-                    className={`pdp-size-btn ${selectedSize === size ? 'active' : ''}`}
-                    onClick={() => {
-                      setSelectedSize(size);
-                      setSizeError(false);
-                    }}
-                  >
-                    {size}
-                  </button>
-                ))}
-              </div>
-            </div>
 
             {/* Buy Button */}
             <button className="pdp-buy" onClick={handleBuy}>
