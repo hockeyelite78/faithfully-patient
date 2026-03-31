@@ -1,26 +1,50 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import modelImg from '../assets/models/male_thighsup_front.JPG';
+import modelImg2 from '../assets/models/hoodie_pic_manny.PNG';
 import blackBack from '../assets/products/black_shirt_back.png';
 import whiteBack from '../assets/products/white_shirt_back.png';
+import hoodieBack from '../assets/products/rhinestone_hoodie_back.png';
 import closingLeft from '../assets/models/male_thighsupshot_lookingdown.JPG';
 import closingRight from '../assets/models/male_and_female_models.jpg';
 import './Home.css';
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
+  const [currentHero, setCurrentHero] = useState(0);
 
   useEffect(() => {
     const t = setTimeout(() => setLoaded(true), 100);
     return () => clearTimeout(t);
   }, []);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHero((prev) => (prev === 0 ? 1 : 0));
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const heroImages = [modelImg, modelImg2];
+
   return (
     <div className={`home ${loaded ? 'home--loaded' : ''}`}>
+      {/* ── ANNOUNCEMENT BANNER ── */}
+      <Link to="/product/fp-rhinestone-hoodie" className="announcement-banner">
+        <span>NEW DROP</span> Rhinestone Hoodie Now Available →
+      </Link>
+
       {/* ── HERO ── */}
       <section className="hero">
         <div className="hero-bg">
-          <img src={modelImg} alt="Faithfully Patient model" />
+          {heroImages.map((img, index) => (
+            <img
+              key={index}
+              src={img}
+              alt="Faithfully Patient model"
+              className={`hero-img ${currentHero === index ? 'active' : ''}`}
+            />
+          ))}
           <div className="hero-overlay"></div>
         </div>
 
@@ -73,10 +97,20 @@ export default function Home() {
         <div className="featured-inner">
           <div className="featured-header">
             <div className="featured-tag">Vol. 01</div>
-            <h2 className="featured-title">The First Drop</h2>
+            <h2 className="featured-title">The Collection</h2>
           </div>
 
           <div className="featured-grid">
+            <Link to="/product/fp-rhinestone-hoodie" className="featured-item featured-item--highlight">
+              <div className="featured-img">
+                <img src={hoodieBack} alt="Rhinestone hoodie back graphic" />
+              </div>
+              <div className="featured-item-info">
+                <span className="featured-item-name">FP Rhinestone Hoodie <span className="new-tag">NEW</span></span>
+                <span className="featured-item-price">$120</span>
+              </div>
+            </Link>
+
             <Link to="/product/fp-tee-black" className="featured-item">
               <div className="featured-img">
                 <img src={blackBack} alt="Black tee back graphic" />
