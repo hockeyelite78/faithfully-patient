@@ -6,7 +6,7 @@ import blackBack from '../assets/products/black_shirt_back.png';
 import whiteBack from '../assets/products/white_shirt_back.png';
 import hoodieBack from '../assets/products/rhinestone_hoodie_back.png';
 import closingLeft from '../assets/models/male_thighsupshot_lookingdown.JPG';
-import closingRight from '../assets/models/male_and_female_models.jpg';
+import closingRight from '../assets/models/male_chestup_loking_down.JPG';
 import './Home.css';
 
 export default function Home() {
